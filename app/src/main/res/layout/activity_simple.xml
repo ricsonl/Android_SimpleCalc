@@ -19,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121"
+        app:layout_constraintVertical_bias="0.25"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -35,8 +35,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/valor1"
         app:layout_constraintVertical_bias="0.169"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="232dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:background="@color/colorPrimaryDark"
@@ -46,7 +45,9 @@
         android:text="+"
         android:layout_marginVertical="30dp"
         app:layout_constraintLeft_toLeftOf="@id/valor2"
-        app:layout_constraintTop_toBottomOf="@id/valor2"/>
+        app:layout_constraintTop_toBottomOf="@id/valor2"
+        android:tag="sum"
+        android:onClick="calculate"/>
 
     <Button
         android:background="@color/colorPrimaryDark"
@@ -57,7 +58,9 @@
         android:layout_marginVertical="30dp"
         android:layout_marginLeft="5dp"
         app:layout_constraintLeft_toRightOf="@id/sum"
-        app:layout_constraintTop_toBottomOf="@id/valor2"/>
+        app:layout_constraintTop_toBottomOf="@id/valor2"
+        android:tag="sub"
+        android:onClick="calculate"/>
 
     <Button
         android:background="@color/colorPrimaryDark"
@@ -68,7 +71,9 @@
         android:layout_marginVertical="30dp"
         android:layout_marginRight="5dp"
         app:layout_constraintRight_toLeftOf="@id/div"
-        app:layout_constraintTop_toBottomOf="@id/valor2"/>
+        app:layout_constraintTop_toBottomOf="@id/valor2"
+        android:tag="mult"
+        android:onClick="calculate"/>
 
     <Button
         android:background="@color/colorPrimaryDark"
@@ -78,5 +83,21 @@
         android:text="/"
         android:layout_marginVertical="30dp"
         app:layout_constraintRight_toRightOf="@id/valor2"
-        app:layout_constraintTop_toBottomOf="@id/valor2"/>
+        app:layout_constraintTop_toBottomOf="@id/valor2"
+        android:tag="div"
+        android:onClick="calculate"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O resultado é: "
+        android:textAlignment="center"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.77"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
