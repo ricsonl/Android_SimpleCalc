@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SimpleCalcActivity"
+            android:label="@string/title_simplecalc_activity">
+        </activity>
+        <activity
+            android:name=".CompleteCalcActivity"
+            android:label="@string/title_completecalc_activity">
+        </activity>
     </application>
 
 </manifest>

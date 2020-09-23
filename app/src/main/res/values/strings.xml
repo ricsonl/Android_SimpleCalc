@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">SimpleCalc</string>
+    <string name="app_name">Calc</string>
+    <string name="title_simplecalc_activity">Simple Calc</string>
+    <string name="title_completecalc_activity">CompleteCalc</string>
 </resources>
