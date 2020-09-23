@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class SimpleCalcActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +34,23 @@ public class SimpleCalcActivity extends AppCompatActivity {
 
         if(!sv1.matches("")){
             if(!sv2.matches("")){
-                int result = 0;
+                double result = 0;
                 switch (tag){
                     case "sum":
-                        result = Integer.parseInt(sv1) + Integer.parseInt(sv2);
+                        result = Double.parseDouble(sv1) + Double.parseDouble(sv2);
                         break;
                     case "sub":
-                        result = Integer.parseInt(sv1) - Integer.parseInt(sv2);
+                        result = Double.parseDouble(sv1) - Double.parseDouble(sv2);
                         break;
                     case "mult":
-                        result = Integer.parseInt(sv1) * Integer.parseInt(sv2);
+                        result = Double.parseDouble(sv1) * Double.parseDouble(sv2);
                         break;
                     case "div":
-                        result = Integer.parseInt(sv1) / Integer.parseInt(sv2);
+                        result = Double.parseDouble(sv1) / Double.parseDouble(sv2);
                         break;
                 }
-                res = new Integer(result).toString();
+                BigDecimal bd = new BigDecimal(result).setScale(3, RoundingMode.HALF_UP);
+                res = new Double (bd.doubleValue()).toString();
             }
         }
 
