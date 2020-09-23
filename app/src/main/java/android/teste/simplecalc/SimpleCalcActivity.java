@@ -1,8 +1,10 @@
 package android.teste.simplecalc;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -49,7 +51,13 @@ public class SimpleCalcActivity extends AppCompatActivity {
         }
 
         TextView resView = findViewById(R.id.result);
-        resView.setText(resView.getText().toString().substring(0, 14) + res);
+        resView.setText(resView.getText().toString().substring(0, 15) + res);
+
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     @Override
