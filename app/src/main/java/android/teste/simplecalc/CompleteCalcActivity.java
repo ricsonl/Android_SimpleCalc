@@ -25,7 +25,7 @@ public class CompleteCalcActivity extends AppCompatActivity {
         String buttonText = ((Button)v).getText().toString();
         if(pressedTag.equals("Back")){
             if(outTxt.substring(outTxt.length() - 1).equals(" "))
-                output.setText(outTxt.substring(0, outTxt.length()-2));
+                output.setText(outTxt.substring(0, outTxt.length()-3));
             else output.setText(outTxt.substring(0, outTxt.length()-1));
         } else if(pressedTag.equals("Clear")){
             output.setText("");
